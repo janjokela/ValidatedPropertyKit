@@ -7,11 +7,14 @@
 //
 
 import Foundation
-import SwiftUI
+#if canImport(SwiftUI)
+    import SwiftUI
+#endif
 
 // MARK: - Validated
 
 /// A Validated PropertyWrapper
+@available(iOS 14, *)
 @propertyWrapper
 public struct Validated<Value>: DynamicProperty, Validatable {
     
@@ -100,6 +103,7 @@ public struct Validated<Value>: DynamicProperty, Validatable {
 
 // MARK: - Validated+Optionalable
 
+@available(iOS 14, *)
 public extension Validated where Value: Optionalable {
     
     /// Designated Initializer for an optional Value type
@@ -125,6 +129,7 @@ public extension Validated where Value: Optionalable {
 
 // MARK: - Storage
 
+@available(iOS 14, *)
 private extension Validated {
     
     /// The Storage

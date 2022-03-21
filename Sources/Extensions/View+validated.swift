@@ -6,10 +6,13 @@
 //  Copyright © 2021 Sven Tiigi. All rights reserved.
 //
 
-import SwiftUI
+#if canImport(SwiftUI)
+    import SwiftUI
+#endif
 
 // MARK: - View+validated
 
+@available(iOS 14, *)
 public extension View {
     
     /// Adds a condition that controls whether users can interact
